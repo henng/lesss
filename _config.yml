@@ -1,0 +1,21 @@
+# head
+menu:
+  HOME: /
+  ARCHIVES: /archives
+  ABOUT: /about
+
+rss: http://henng.com/atom.xml
+favicon: images/favicon.ico
+
+# main
+date_format: 'MMMM D, YYYY'
+excerpt_link: MORE >>
+comment_link: 
+
+# duoshuo
+duoshuo_short_name: 
+
+
+# foot
+themes_mata: ' | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with theme <a href="https://github.com/henng/lesss" target="_blank">lesss</a> based on <a href="https://github.com/unmric/hexo-theme-strict" target="_blank">strict</a>'
+google_analytics: 

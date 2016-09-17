@@ -1,0 +1,41 @@
+mixin post(post, index)
+  article.post
+    header.post__head
+      time.post__time(datetime = date_xml(post.date))
+        = date(post.date, theme.date_format)
+      h1.post__title: a(href = config.root + post.path)
+        = post.title
+    if index != 'archive'
+      if post.img
+        a.post__image(href = config.root + post.path): img(src = post.img, alt = 'featured-image')
+      div.post__main.echo
+        if post.excerpt && index == 'index' || index == 'tag' || index == 'category'
+          != post.excerpt
+        else
+          != post.content
+    footer.post__foot.u-cf
+      if post.tags && post.tags.length
+        ul.post__tag.u-fl
+          -post.tags.forEach(function(tag){
+            li.post__tag__item: a.post__tag__link(href = config.root + tag.path)
+              = tag.name
+          - })
+      if post.excerpt && index == 'index' || index == 'archive' || index == 'tag' || index == 'category'
+        a.post__more.u-fr(href = config.root + post.path )= theme.excerpt_link
+      else
+        div(class='ds-share flat' style='margin-left:31em' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
+         .ds-share-inline
+            ul.ds-share-icons-16
+              li(data-toggle='ds-share-icons-more')
+                a(class='ds-more' href='javascript:void(0);') Share：
+              li
+                a(class='ds-weibo' href='javascript:void(0);' data-service='weibo') 微博
+              li
+                a(class='ds-wechat' href='javascript:void(0);' data-service='wechat') 微信
+              li
+                a(class='ds-google' href='javascript:void(0);' data-service='google') Google+
+              li
+                a(class='ds-twitter' href='javascript:void(0);' data-service='twitter') Twitter
+            //.ds-share-icons-more
+        //a.post__foot-link.u-fr(href = config.root + post.path + '#disqus_thread')= theme.comment_link
+    
