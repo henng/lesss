@@ -6,7 +6,7 @@ block main
   +post(page, 'page')
   if page.comments
     div.comments#comments
-      div.ds-thread
+      div(class='ds-thread' data-thread-key=page.path, data-title=page.title, data-url=page.permalink)
 
         if theme.duoshuo_short_name
 

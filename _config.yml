@@ -4,7 +4,7 @@ menu:
   ARCHIVES: /archives
   ABOUT: /about
 
-rss: http://henng.com/atom.xml
+rss: /atom.xml
 favicon: images/favicon.ico
 
 # main
